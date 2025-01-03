@@ -1,13 +1,5 @@
 let Commands;
-const API_KEY="YOUR_API_KEY";
-const one = "Ed Sheeran   Shape of you.webm";
-const two = "Imran Khan - Satisfya.webm";
-const three = "Senorita.webm";
-const four = "Chand_Tare_Tod_Full_Video_Song.mp3";
-const five = "Imagine Dragons - Believer.mp3";
-const six = "Justin Bieber – Despacito.mp3";
-const seven = "The Chainsmokers - Closer.mp3";
-const eight = "Baby Song.mp3";
+const API_KEY="cac473d6bf5957b6879513079dd69ae2";
 function fetchCommands()
 {
     fetch("/mic/Process.json")
@@ -82,7 +74,7 @@ function ProcessCommand(UserText)
             Speak('Searching initiated...'+UserText);
             searchOnGoogle(UserText);
         }
-        else if(UserText.includes("hey jarvis"))
+        else if(UserText.includes("hey ava"))
         {
             UserText=UserText.slice(10);
             Speak('Searching initiated...'+UserText);
@@ -229,18 +221,18 @@ function searchOnYoutube(data)
     );
 }
 
-//Close to jarvis
-function closeJarvis()
+//Close AVA
+function closeAVA()
 {
     setTimeout(function() {
         window.close();
         }, 2*1000);
 }
 
-//Reload Jarvis
-function reloadJarvis()
+//Reload AVA
+function reloadAVA()
 {
-    // Speak('Reloading jarvis...');
+    // Speak('Reloading ava...');
     // Speak('Taking initial checks...');
     // Speak('Backing up configurations...');
     // Speak('I am online and ready again...');
@@ -251,13 +243,13 @@ function reloadJarvis()
     }, 7*1000);
 }
 
-//To move Jarvis window upside
+//To move AVA window upside
 function stepUp()
 {
     window.moveBy(0,-100);
 }
 
-//To move Jarvis window downside
+//To move AVA window downside
 function stepDown()
 {
     window.moveBy(0,100);
@@ -291,73 +283,12 @@ function getBattery()
 //Get family Information
 function getFamilyInfo()
 {
-    Speak("there are six member in your family...");
-    Speak("grandmother... father... mother... your brother... sister... and you...");
-    Speak("you live in junibej... which is in maharashtra...");
-    Speak("i have lot to say but i think it will be enough...");
-}
-//Play Music
-function playMusic()
-{
-    Speak("Playing music...");
-    window.shutter = new Audio();
-    shutter.autoplay = true;
-    // play sound effect
-    var randomNumber = Math.floor((Math.random() * 11)+1);
-    //randomNumber = 11;
-    console.log(randomNumber);
-    let songNumber;
-    if(randomNumber == 1)
-    {
-        // songNumber = one;
-        shutter.src = one;
-    }
-    else if(randomNumber == 2)
-    {
-        shutter.src = two;
-    }
-    else if(randomNumber == 3)
-    {
-        shutter.src = three;
-    }
-    else if(randomNumber == 4)
-    {
-        shutter.src = four;
-    }
-    else if(randomNumber == 5)
-    {
-        shutter.src = five;
-    }
-    else if(randomNumber == 6)
-    {
-        shutter.src = six;
-    }
-    else if(randomNumber == 7)
-    {
-        shutter.src = four;
-    }
-    else if(randomNumber == 8)
-    {
-        shutter.src = eight;
-    }
-    else if(randomNumber == 11)
-    {
-        shutter.src = "Background Music.mp3";
-    }
-    else
-    {
-        shutter.src = eleven;
-    }
-    shutter.play();
+    Speak("There are six members in your family.");
+    Speak("Your grandmother, father, mother, brother, sister, and you.");
+    Speak("You live in Junibej, Maharashtra.");
+    Speak("I have a lot more to say, but I think this will suffice.");
 }
 
-//Stop Music
-function stopMusic()
-{
-    shutter.pause();
-}
-var randomNumber = Math.floor((Math.random() * 3)+1);
-console.log(randomNumber);
 //Telling a Joke
 function tellMeAJoke()
 {
@@ -432,9 +363,9 @@ function nextJoke()
 //Welcome to friends
 function welcomeToFriends()
 {
-    Speak("Welcome you all.. i am jarvis... nice to meet you...");
-    Speak("I have a big list and am sure that you are one from that...");
-    Speak("Sir... should i pack up...I think you want to talk to your friends...");
+    Speak("Welcome everyone. I am AVA, it's nice to meet you.");
+    Speak("I have a comprehensive list and I'm sure you're on it.");
+    Speak("Sir, should I step aside? I think you would like to talk with your friends.");
 }
 //Show friends list
 function friendList()
@@ -456,18 +387,18 @@ function systemInfo()
 {
         if(navigator.onLine)
         {
-            Speak("The system is online with the speed of "+navigator.connection.downlink+" MB per second");
+            Speak("The system is online with a speed of "+navigator.connection.downlink+" megabytes per second");
         }
         else{
-            Speak("The system is not online...");
+            Speak("The system is offline.");
         }
-        Speak("Keyboard language is "+navigator.language);
+        Speak("The keyboard language is set to "+navigator.language);
         var type = navigator.connection.effectiveType;
         type = type.slice(0,1);
-        Speak("The type of connection this system is using is "+type+" G");
+        Speak("The system is using a "+type+"G connection");
         var platform = navigator.platform;
         platform = platform.slice(3,5);
-        Speak("The system is windows "+platform+" bits");
+        Speak("This is a "+platform+"-bit Windows system");
 }
 //Internet Speed
 function internetSpeed()
@@ -495,26 +426,22 @@ function readList(){
     }
 }
 
-function jarvisSaysHello()
+function avaSaysHello()
 {
     let d = new Date();
     var hours = d.getHours();
-    Speak("i am jarvis");
+    Speak("I am AVA");
     if(hours <= 12)
     {
-        Speak("Good morning...");
+        Speak("Good morning.");
     }
-    else if(hours >12 && hours<= 16)
+    else if(hours > 12 && hours <= 16)
     {
-        Speak("Good afternoon...");
+        Speak("Good afternoon.");
     }
-    else if(hours >16 && hours<= 20)
+    else if(hours > 16 && hours <= 20)
     {
-        Speak("Good evening...");
+        Speak("Good evening.");
     }
-    else
-    {
-
-    }
-    Speak("say what can i do for you sir...");
+    Speak("How may I help you, sir?");
 }

@@ -1,4 +1,4 @@
-const API_KEY="YOUR_API_KEY";
+const API_KEY="cac473d6bf5957b6879513079dd69ae2";
 
 const speechRecognition=window.webkitSpeechRecognition //Google Chrome 
 ||
@@ -75,7 +75,7 @@ function getDate1()
     document.getElementById("weekDayValue").innerHTML = days[d.getDay()];
 }
 
-// jarvisStartingReply();
+// AVAStartingReply();
 function startListening()
 {
     const recong = new speechRecognition();
@@ -120,7 +120,7 @@ function Speak(TEXT)
     });
 }
 
-function jarvisStartingReply()
+function AVAStartingReply()
       {
         Speak("please wait...system initializing...backing up configurations...gathering audio and video files...");
         Speak("system initialized...");

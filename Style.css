@@ -418,6 +418,7 @@ body {
 }
 
 * {
+  -webkit-user-select: none;
   user-select: none;
   font: 20px "Agency FB", sans-serif;
 }

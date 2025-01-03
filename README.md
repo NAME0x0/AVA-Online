@@ -25,12 +25,11 @@ step 4:
       And then call this function in process.json with it's respective command for example...
       // In process.json
       {
-      "Jarvis set an alarm" : "createAlarm()"
+      "AVA set an alarm" : "createAlarm()"
       }
       
 ✔️ Please allow the necessary permission required to perform certain task like
     camera permission for taking pictures,location for weather details, etc...
     
-✔️ Sometimes JARVIS starting message/sound does not come so click on center so new small JARVIS window will come and then press 'ctrl+s' in 
-    vscode this is quite annoying but this will solve issue...
+✔️ Sometimes AVA starting message/sound does not come so click on center so new small JARVIS window will come and then press 'ctrl+s' in vscode, this is quite annoying but this will solve issue...
 
